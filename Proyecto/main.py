@@ -11,7 +11,7 @@ def sube_archivo():
     return "<p>Aqui se sube el archivo</p>"
 
 @app.route("/editararquetipos")
-def edita_rarquetipos():
+def editar_arquetipos():
     return "<p>Aqui se editar los arquetipos</p>"
 
 @app.route("/creardocumento")
