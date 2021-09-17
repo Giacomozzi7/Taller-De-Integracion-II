@@ -1,0 +1,112 @@
+[{
+  "id" : 1,
+  "categoria": "Categoria_1",
+  "descripcion": "qqqqqqqqqqqq qqqqqqqqqqqqqqqq qqqqqqqqqqqqq qqqqqqqqqqqqqqqq",
+  "fecha_creacion": "10/10/2021", 
+  "subcategoria": [{
+      "id_subcat": 100,
+      "titulo_subcat": "Subcat_1",
+      "descripcion": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww",
+      "arquetipo":[{
+        "id_arquetipo": 1000,
+        "titulo_arquetipo": "Arquetipo_1",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      },{
+        "id_arquetipo": 1001,
+        "titulo_arquetipo": "Arquetipo_2",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }]}
+  ,
+  {
+      "id_subcat": 101,
+      "titulo_subcat": "Subcat_2",
+      "descripcion": "ffffffff ffffffff ffffffffffffff ffffffff",
+      "arquetipo":[{
+        "id_arquetipo": 1002,
+        "titulo_arquetipo": "Arquetipo_3",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }]
+  }]
+},
+{
+  "id" : 2,
+  "categoria": "Categoria_2",
+  "descripcion": "qqqqqqqqqqqq qqqqqqqqqqqqqqqq qqqqqqqqqqqqq qqqqqqqqqqqqqqqq",
+  "fecha_creacion": "10/10/2021",
+  "subcategoria": [{
+      "id_subcat": 102,
+      "titulo_subcat": "Subcat_3",
+      "descripcion": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww",
+      "arquetipo":[{
+        "id_arquetipo": 1003,
+        "titulo_arquetipo": "Arquetipo_4",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }]
+  },
+  {
+      "id_subcat": 103,
+      "titulo_subcat": "Subcat_4",
+      "descripcion": "ffffffff ffffffff ffffffffffffff ffffffff",
+      "arquetipo":[{
+        "id_arquetipo": 1004,
+        "titulo_arquetipo": "Arquetipo_5",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }]
+  },
+  {
+      "id_subcat": 104,
+      "titulo_subcat": "Subcat_5",
+      "descripcion": "ffffffff ffffffff ffffffffffffff ffffffff",
+      "arquetipo":[{
+        "id_arquetipo": 1005,
+        "titulo_arquetipo": "Arquetipo_6",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }]
+  }
+  ]
+},
+{
+  "id" : 3,
+  "categoria": "Categoria_3",
+  "descripcion": "qqqqqqqqqqqq qqqqqqqqqqqqqqqq qqqqqqqqqqqqq qqqqqqqqqqqqqqqq",
+  "fecha_creacion": "10/10/2021", 
+  "subcategoria": [{
+      "id_subcat": 105,
+      "titulo_subcat": "Subcat_6",
+      "descripcion": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww",
+      "arquetipo":[{
+        "id_arquetipo": 1006,
+        "titulo_arquetipo": "Arquetipo_7",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }]
+  },
+  {
+      "id_subcat": 106,
+      "titulo_subcat": "Subcat_7",
+      "descripcion": "ffffffff ffffffff ffffffffffffff ffffffff",
+      "arquetipo":[{
+        "id_arquetipo": 1007,
+        "titulo_arquetipo": "Arquetipo_8",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }]
+  },
+  {
+      "id_subcat": 107,
+      "titulo_subcat": "Subcat_8",
+      "descripcion": "ffffffff ffffffff ffffffffffffff ffffffff",
+      "arquetipo":[{
+        "id_arquetipo": 1008,
+        "titulo_arquetipo": "Arquetipo_9",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      },
+      {
+        "id_arquetipo": 1009,
+        "titulo_arquetipo": "Arquetipo_10",
+        "parrafo": "wwwwwwwwwww wwwwwwwwwww wwwwwwwwwwww wwwwwwwwwwww"
+      }
+      ]
+  }
+  
+  ]
+}
+]
