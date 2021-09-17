@@ -11,5 +11,9 @@ def sube_archivo():
     return "<p>Aqui se sube el archivo</p>"
 
 
+@app.route("/editararquetipos")
+def editararquetipos():
+    return "<p>Aqui se editar los arquetipos</p>"
+
 if __name__ == "__main__":
     app.run()
