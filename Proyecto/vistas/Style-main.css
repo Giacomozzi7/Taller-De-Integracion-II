@@ -7,20 +7,20 @@
 body{
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--primary)
 }
 
 .bg-primary { background-color: var(--primary) !important;}
 
 #sidebar-container{
-    min-height: 100vh;
+    min-height: 300vh;
 }
 
 #sidebar-container .logo{
-    padding: .875rem 1.25rem;
+    padding: .875rem 2.25rem;
 }
 
 #siderbar-container .menu{
-    width: 18rem;
+    width: 20rem;
 }
