@@ -7,9 +7,9 @@ app.config['UPLOAD_FOLDER'] = './ArchivosJSON'
 
 @app.route("/")
 def upload_file():
-  return render_template('main.html')
+  return render_template('subirarchivo.html')
 
-@app.route("/subirarchivo", methods=['POST'])
+@app.route("/upload", methods=['POST'])
 def uploader():
   if request.method == 'POST':
     f = request.files['archivo']
