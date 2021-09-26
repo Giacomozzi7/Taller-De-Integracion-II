@@ -8,7 +8,9 @@ def hello_world():
 
 @app.route("/subirarchivo")
 def sube_archivo():
-    return "<p>Aqui se sube el archivo</p>"
+    archivosubir = open("subirarchivo.py")
+    while línea != '':
+        línea = archivosubir.readline()
 
 @app.route("/editararquetipos")
 def editar_arquetipos():
