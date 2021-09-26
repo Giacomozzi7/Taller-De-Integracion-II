@@ -9,13 +9,13 @@ app.config['UPLOAD_FOLDER'] = './ArchivosJSON'
 def upload_file():
   return render_template('subirarchivo.html')
 
-@app.route("/upload", methods=['POST'])
+@app.route("/uploader", methods=['POST'])
 def uploader():
   if request.method == 'POST':
     f = request.files['archivo']
     filename = secure_filename(f.filename)
     f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    return "<h1>Archivo subido exitosamente</h1>"
+    return "Archivo subido exitosamente"
 
 if __name__ == '__main__':
   app.run(debug=True)
