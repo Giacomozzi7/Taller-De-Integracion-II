@@ -1,11 +1,12 @@
 import os
 from flask import Flask, render_template, request
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
+from werkzeug.datastructures import FileStorage
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './ArchivosJSON'
 
-@app.route("/")
+@app.route("/subirarchivo")
 def upload_file():
   return render_template('subirarchivo.html')
 
