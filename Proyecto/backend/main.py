@@ -17,6 +17,7 @@ def sube_archivo():
         file = request.files["archivo"]
         filename = file.filename
         file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+        print(filename)
         return redirect(url_for("get_file", filename = filename))
     
     return render_template('subir_archivo.html')
