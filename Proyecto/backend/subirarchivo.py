@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, url_for, send_from_directory
-from flask_pymongo import PyMongo
+import pymongo
+from pymongo import MongoClient
 from werkzeug.utils import redirect, secure_filename
 from werkzeug.datastructures import FileStorage
 
