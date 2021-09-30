@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, url_for, send_from_directory, redirect, flash
+from validarjson import validarJSON
 
 #Se definen directorios para templates y archivos subidos
 UPLOAD_FOLDER = os.path.abspath("./Proyecto/backend/uploads/")
@@ -20,7 +21,11 @@ def sube_archivo():
         file = request.files["archivo"]
         filename = file.filename
         file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-        return redirect(url_for("crear_documento"))
+
+        sAlerta = validarJSON(filename)
+        print("ALERTA: ", sAlerta)
+        if sAlerta =="":
+            return redirect(url_for("crear_documento"))
     
     return render_template('subir_archivo.html')
 
