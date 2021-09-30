@@ -24,9 +24,9 @@ def inicializarBDD(filename):
     else:
         coleccion.insert_one(file_data)
 
-    #buscar = db.arquetipos.find({}, {})
+    return 
 
 
-inicializarBDD("arquetipos.json")
+
 
 
