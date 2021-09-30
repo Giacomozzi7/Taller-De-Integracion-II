@@ -16,6 +16,7 @@ def hello_world():
 
 @app.route("/subirarchivo", methods=["GET", "POST"])
 def sube_archivo():
+    sAlerta= ""
     if request.method == "POST":
         global filename
         file = request.files["archivo"]
@@ -23,11 +24,14 @@ def sube_archivo():
         file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
 
         sAlerta = validarJSON(filename)
-        print("ALERTA: ", sAlerta)
+        
         if sAlerta =="":
             return redirect(url_for("crear_documento"))
-    
-    return render_template('subir_archivo.html')
+        else:
+            render_template('subir_archivo.html',a= sAlerta)
+
+        
+    return render_template('subir_archivo.html',a = sAlerta)
 
 #Ruta para ver el archivo json subido
 @app.route("/verjson")
