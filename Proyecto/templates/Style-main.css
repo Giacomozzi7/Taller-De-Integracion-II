@@ -4,23 +4,23 @@
     --grey: #efefef;
 }
 
-body{
+body {
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     color: var(--primary)
 }
 
-.bg-primary { background-color: var(--primary) !important;}
+.bg-primary { background-color: var(--primary) !important; }
 
 #sidebar-container{
-    min-height: 300vh;
+    min-height: 100vh;
 }
 
 #sidebar-container .logo{
-    padding: .875rem 2.25rem;
+    padding: .875rem 1.25rem;
 }
 
 #siderbar-container .menu{
-    width: 20rem;
+    width: 18rem;
 }
