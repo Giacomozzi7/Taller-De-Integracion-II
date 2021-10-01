@@ -1,3 +1,7 @@
 h3 {
     color:blue;
 }
+
+#arquetipo{
+    display: inline-block;
+}
