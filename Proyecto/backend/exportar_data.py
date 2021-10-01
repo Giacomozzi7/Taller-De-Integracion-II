@@ -10,22 +10,23 @@ def exportaData():
     db = client['data']
     coleccion =db['arquetipos']
 
-    aColeccion = []
+    #Se recorren las colecciones para almacenar categorias_subcategorias y arquetipos
     buscar = db.arquetipos.find({}, {"categoria":1,"fecha_creacion":1,"subcategoria":1})
     for busq in buscar:
-        aColeccion.append(busq["categoria"])
-        aColeccion.append(busq["fecha_creacion"])
-
+        aColeccion = []
+        aColeccion.append(busq["categoria"]) ; aColeccion.append(busq["fecha_creacion"])
         len_subcat = len(busq["subcategoria"])
-
-        aSubcat=[]
+        aSubcat=[];aArquetipos=[]
         for i in range(len_subcat):
             aSubcat.append(busq["subcategoria"][i]["titulo_subcat"])
-        
-        print(aColeccion)
-        print(aSubcat)
 
-        break
+            aArq=[]
+            len_arquetipos = len(busq["subcategoria"][i]["arquetipos"])
+            for k in range(len_arquetipos):
+                aArq.append((busq["subcategoria"][i]["arquetipos"][k]['titulo_arquetipo'],busq["subcategoria"][i]["arquetipos"][k]['parrafo']))
+            
+            aArquetipos.append(aArq)
 
+        aData.append([aColeccion,aSubcat,aArquetipos])
 
-exportaData()
+    return aData
