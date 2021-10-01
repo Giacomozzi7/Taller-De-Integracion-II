@@ -6,7 +6,8 @@ from import_mongo import inicializarBDD
 #Se definen directorios para templates y archivos subidos
 UPLOAD_FOLDER = os.path.abspath("./Proyecto/backend/uploads/")
 template_dir = os.path.abspath('..//Taller-De-Integracion-II//Proyecto//frontend//templates')
-app = Flask(__name__,template_folder=template_dir)
+static_dir = os.path.abspath('..//Taller-De-Integracion-II//Proyecto//frontend//static')
+app = Flask(__name__,template_folder=template_dir,static_folder = static_dir)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 filename = ""
 
