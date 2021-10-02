@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, request, url_for, send_from_directory, redirect, flash
 from validarjson import validarJSON
 from import_mongo import inicializarBDD
+from exportar_data import exportaData
 
 #Se definen directorios para templates y archivos subidos
 UPLOAD_FOLDER = os.path.abspath("./Proyecto/backend/uploads/")
@@ -10,6 +11,7 @@ static_dir = os.path.abspath('..//Taller-De-Integracion-II//Proyecto//frontend//
 app = Flask(__name__,template_folder=template_dir,static_folder = static_dir)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 filename = ""
+aData = []
 
 #Ruta para Main
 @app.route("/")
@@ -29,6 +31,7 @@ def sube_archivo():
         sAlerta = validarJSON(filename) #Se valida la estructura y el formato del archivo
         if sAlerta =="":
             inicializarBDD(filename)  #Se inicializa la conexion y la importacion de datos en mongo
+            global aData ; aData = exportaData()
             return redirect(url_for("crear_documento"))
         else:
             render_template('subir_archivo.html',a= sAlerta)
@@ -53,7 +56,11 @@ def get_file(filename):
 #Ruta para confeccionar los documentos
 @app.route("/creardocumento")
 def crear_documento():
-    return render_template('crear_documento.html')
+    print(aData)
+    if len(aData)>0:
+        return render_template('crear_documento.html', aData = aData)
+    else:
+        return redirect(url_for("sube_archivo"))
 
 #Ruta para editar los arquetipos
 @app.route("/editararquetipos")

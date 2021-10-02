@@ -3,5 +3,17 @@ h3 {
 }
 
 #arquetipo{
-    display: inline-block;
+    display: inline-flex;
+    height: 250px;
+    
+}
+
+#tit{
+    display: inline-flex;
+    margin-left: 4px;
+}
+
+.all_categorias{
+    margin-top:20px;
+
 }
