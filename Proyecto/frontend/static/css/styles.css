@@ -1,5 +1,5 @@
-h3 {
-    color:blue;
+h3, #ct {
+    font-weight: bold;
 }
 
 #arquetipo{
@@ -12,6 +12,8 @@ h3 {
     display: inline-flex;
     margin-left: 4px;
 }
+
+
 
 .all_categorias{
     margin-top:20px;
