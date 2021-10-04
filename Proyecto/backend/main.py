@@ -6,8 +6,20 @@ from exportar_data import exportaData
 
 #Se definen directorios para templates y archivos subidos
 UPLOAD_FOLDER = os.path.abspath("./Proyecto/backend/uploads/")
-template_dir = os.path.abspath('..//Taller-De-Integracion-II//Proyecto//frontend//templates')
-static_dir = os.path.abspath('..//Taller-De-Integracion-II//Proyecto//frontend//static')
+
+#Intenta cargar directorio de templates segun corresponda
+try:
+    template_dir = os.path.abspath('..//Taller-De-Integracion-II//Proyecto//frontend//templates')
+except:
+   template_dir = os.path.abspath('..//Proyecto//frontend//templates')
+
+#Intenta cargar directorio de static segun corresponda
+try:
+    static_dir = os.path.abspath('..//Taller-De-Integracion-II//Proyecto//frontend//static')
+except:
+    static_dir = os.path.abspath('..//Proyecto//frontend//static')
+
+
 app = Flask(__name__,template_folder=template_dir,static_folder = static_dir)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 filename = ""
