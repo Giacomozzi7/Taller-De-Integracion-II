@@ -19,3 +19,18 @@ h3, #ct {
     margin-top:20px;
 
 }
+
+.izquierda{
+
+    height: 400px;
+    width: 400px;
+}
+
+.derecha{
+    
+    height: 800px;
+    width: 800px;
+    margin-left: 500px;
+    padding: 5px;
+    top: 20px;
+}
