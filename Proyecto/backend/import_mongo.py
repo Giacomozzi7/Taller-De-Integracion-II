@@ -10,7 +10,7 @@ def inicializarBDD(filename):
 
     #Se inicializa la base de datos 'data' y la coleccion 'arquetipos'
     db = client['data']
-    coleccion =db['arquetipos']
+    coleccion = db['arquetipos']
 
     db.arquetipos.delete_many({})
 

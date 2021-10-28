@@ -20,7 +20,7 @@ except:
     static_dir = os.path.abspath('..//Proyecto//frontend//static')
 
 
-app = Flask(__name__,template_folder=template_dir,static_folder = static_dir)
+app = Flask(__name__, template_folder = template_dir, static_folder = static_dir)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 filename = ""
 aData = []
@@ -33,7 +33,7 @@ def hello_world():
 #Ruta para subir archivo
 @app.route("/subirarchivo", methods=["GET", "POST"])
 def sube_archivo():
-    sAlerta= ""
+    sAlerta = ""
     if request.method == "POST": #Si se sube el archivo
         global filename
         file = request.files["archivo"]
@@ -41,12 +41,12 @@ def sube_archivo():
         file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
 
         sAlerta = validarJSON(filename) #Se valida la estructura y el formato del archivo
-        if sAlerta =="":
+        if sAlerta == "":
             inicializarBDD(filename)  #Se inicializa la conexion y la importacion de datos en mongo
             global aData ; aData = exportaData()
             return redirect(url_for("crear_documento"))
         else:
-            render_template('subir_archivo.html',a= sAlerta)
+            render_template('subir_archivo.html',a = sAlerta)
 
         
     return render_template('subir_archivo.html',a = sAlerta)
@@ -56,7 +56,7 @@ def sube_archivo():
 def ver_json():
     print("filename",filename)
     if filename != "": #si se ha subido algun archivo, lo muestra
-        return redirect(url_for("get_file", filename= filename))
+        return redirect(url_for("get_file", filename = filename))
     else: #sino devuelve a crear_documento
         return redirect(url_for("crear_documento"))
 
@@ -69,7 +69,7 @@ def get_file(filename):
 @app.route("/creardocumento")
 def crear_documento():
     print(aData)
-    if len(aData)>0:
+    if len(aData) > 0:
         return render_template('crear_documento.html', aData = aData)
     else:
         return redirect(url_for("sube_archivo"))
@@ -77,7 +77,12 @@ def crear_documento():
 #Ruta para editar los arquetipos
 @app.route("/editararquetipos")
 def editar_arquetipos():
-    return "<p>Aqui se editar los arquetipos</p>"
+    return render_template("/editar_arquetipos.html")
+
+#Ruta para visualizar los documentos
+@app.route("/docs")
+def docs():
+    return render_template("/docs.html")
 
 
 
