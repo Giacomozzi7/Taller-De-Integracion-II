@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row mt-5">
         <div class="col-3 offset-9">
-          <a href="subirarchivo" class="btn btn-primary text-right">Añadir documento</a>
+          <a href="subirarchivo" class="btn btn-primary text-right">Ver subcategoría</a>
         </div>
       </div>
       <br>  
@@ -37,17 +37,16 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Categoría</th>
-            <th scope="col">Descripción</th>
             <th scope="col">Fecha</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
+          {%for i in range(0,aData|length)%}
           <tr>
-            <th scope="row">1</th>
-            <td>Categoria 111</td>
-            <td>hola hola hola</td>
-            <td>12-08-2020</td>
+            <th scope="row">{{i}}</th>
+            <td>{{aData[i][0][0]}}</td>
+            <td>{{aData[i][0][1]}}</td>
             <td>
               <button class="btn btn-success text-right">
                 Editar
@@ -57,8 +56,10 @@
               </button>
             </td>
           </tr>
+          {%endfor%}  
         </tbody>
       </table>
+
     </div>
 
     <!-- Optional JavaScript -->

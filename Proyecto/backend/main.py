@@ -77,7 +77,7 @@ def crear_documento():
 @app.route("/editararquetipos")
 def editar_arquetipos():
     if len(aData) > 0:
-        return render_template("/editar_arquetipos.html")
+        return render_template("/editar_arquetipos.html", aData = aData)
     else:
         return redirect(url_for("sube_archivo"))
     
