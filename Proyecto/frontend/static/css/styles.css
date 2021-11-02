@@ -24,13 +24,11 @@ h3, #ct {
 
     height: 400px;
     width: 400px;
+    display:inline-flex;
 }
 
 .derecha{
-    
-    height: 800px;
     width: 800px;
     margin-left: 500px;
     padding: 5px;
-    top: 20px;
 }

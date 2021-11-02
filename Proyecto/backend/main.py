@@ -48,7 +48,6 @@ def sube_archivo():
         else:
             render_template('subir_archivo.html',a = sAlerta)
 
-        
     return render_template('subir_archivo.html',a = sAlerta)
 
 #Ruta para ver el archivo json subido
@@ -77,14 +76,11 @@ def crear_documento():
 #Ruta para editar los arquetipos
 @app.route("/editararquetipos")
 def editar_arquetipos():
-    return render_template("/editar_arquetipos.html")
-
-#Ruta para visualizar los documentos
-@app.route("/docs")
-def docs():
-    return render_template("/docs.html")
-
-
+    if len(aData) > 0:
+        return render_template("/editar_arquetipos.html")
+    else:
+        return redirect(url_for("sube_archivo"))
+    
 
 
 #Init

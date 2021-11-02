@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
-    <title>Hello, world!</title>
+    <title>Modificar estructura</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,16 +18,47 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Subir Archivo<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="editararquetipos">Modificar Estructura</a>
+            <a class="nav-item nav-link active" href="/subirarchivo">Subir Archivo<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/editararquetipos">Modificar Estructura</a>
             <a class="nav-item nav-link active" href="/creardocumento">Crear Documento</a>
-            <a class="nav-item nav-link" href="/docs">Ver documentos</a>
           </div>
         </div>
     </nav>
     <br>
     <div class="container">
-        <h2>Hola, acá se harán las ediciones de arquetipos</h2>
+      <div class="row mt-5">
+        <div class="col-3 offset-9">
+          <a href="subirarchivo" class="btn btn-primary text-right">Añadir documento</a>
+        </div>
+      </div>
+      <br>  
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Categoria 111</td>
+            <td>hola hola hola</td>
+            <td>12-08-2020</td>
+            <td>
+              <button class="btn btn-success text-right">
+                Editar
+              </button>
+              <button class="btn btn-danger text-right">
+                Borrar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Optional JavaScript -->
