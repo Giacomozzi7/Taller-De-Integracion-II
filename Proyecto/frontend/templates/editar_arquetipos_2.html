@@ -26,10 +26,10 @@
     </nav>
     <br>
     <div class="container">
-      <h3>Vista: Modificar estructura (Categorías)</h3>
+      <h3>Vista: Modificar estructura (Arquetipos)</h3>
       <div class="row mt-5">
         <div class="col-3 offset-9">
-          <a href="/editararquetipos_2" class="btn btn-primary text-right">Ver arquetipos</a>
+          <a href="/editararquetipos" class="btn btn-primary text-right">Volver</a>
         </div>
       </div>
       <br>
@@ -50,11 +50,11 @@
           </tr>
         </thead>
         <tbody>
-          {%for i in range(0,aData|length)%}
+          {%for i in range(0,aNData|length)%}
           <tr>
             <th scope="row">{{i}}</th>
-            <td>{{aData[i][0][0]}}</td>
-            <td>{{aData[i][0][1]}}</td>
+            <td>{{aNData[i][0]}}</td>
+            <td>{{aNData[i][1]}}</td>
             <td>
               <button class="btn btn-success text-right">
                 Editar
@@ -64,7 +64,7 @@
               </button>
             </td>
           </tr>
-          {%endfor%}  
+          {%endfor%}    
         </tbody>
       </table>
 

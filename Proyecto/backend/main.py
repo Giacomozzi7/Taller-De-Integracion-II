@@ -1,4 +1,5 @@
 import os
+import itertools
 from flask import Flask, render_template, request, url_for, send_from_directory, redirect, flash
 from validarjson import validarJSON
 from import_mongo import inicializarBDD
@@ -80,6 +81,22 @@ def editar_arquetipos():
         return render_template("/editar_arquetipos.html", aData = aData)
     else:
         return redirect(url_for("sube_archivo"))
+
+#Ruta para editar los arquetipos
+@app.route("/editararquetipos_2")
+def editar_arquetipos_2():
+    aNData = []
+    if len(aData) > 0:
+        for i in range(0,len(aData)):
+            aNuevo = list(itertools.chain.from_iterable(aData[i][2]))
+            for item in aNuevo:
+                aNData.append(item)
+
+        return render_template("/editar_arquetipos_2.html", aNData = aNData)
+    
+    else:
+        return redirect(url_for("sube_archivo"))
+
     
 
 

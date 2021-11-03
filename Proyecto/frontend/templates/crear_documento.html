@@ -81,7 +81,7 @@
         //Ver en modo HTML
         function validateMode() {
         if (!document.compForm.switchMode.checked) { return true ; }
-        alert("Uncheck \"Show HTML\".");
+        //alert("Uncheck \"Show HTML\".");
         oDoc.focus();
         return false;
         }
@@ -143,45 +143,45 @@
         <input type="hidden" name="myDoc">
         <div id="toolBar1">
         <select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;">
-        <option selected>- formatting -</option>
-        <option value="h1">Title 1 &lt;h1&gt;</option>
-        <option value="h2">Title 2 &lt;h2&gt;</option>
-        <option value="h3">Title 3 &lt;h3&gt;</option>
-        <option value="h4">Title 4 &lt;h4&gt;</option>
-        <option value="h5">Title 5 &lt;h5&gt;</option>
-        <option value="h6">Subtitle &lt;h6&gt;</option>
-        <option value="p">Paragraph &lt;p&gt;</option>
-        <option value="pre">Preformatted &lt;pre&gt;</option>
+        <option selected>- Formato -</option>
+        <option value="h1">Titulo 1&lt;h1&gt;</option>
+        <option value="h2">Titulo 2&lt;h2&gt;</option>
+        <option value="h3">Titulo 3&lt;h3&gt;</option>
+        <option value="h4">Titulo 4&lt;h4&gt;</option>
+        <option value="h5">Titulo 5&lt;h5&gt;</option>
+        <option value="h6">Subtitulo&lt;h6&gt;</option>
+        <option value="p">Parrafo&lt;p&gt;</option>
+        <option value="pre">Pre&lt;pre&gt;</option>
         </select>
         <select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
-        <option class="heading" selected>- font -</option>
+        <option class="heading" selected>- Fuentes -</option>
         <option>Arial</option>
         <option>Arial Black</option>
         <option>Courier New</option>
         <option>Times New Roman</option>
         </select>
         <select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;">
-        <option class="heading" selected>- size -</option>
-        <option value="1">Very small</option>
-        <option value="2">A bit small</option>
+        <option class="heading" selected>- Tamaño -</option>
+        <option value="1">Muy pequeño</option>
+        <option value="2">Pequeño</option>
         <option value="3">Normal</option>
-        <option value="4">Medium-large</option>
-        <option value="5">Big</option>
-        <option value="6">Very big</option>
-        <option value="7">Maximum</option>
+        <option value="4">Mediano</option>
+        <option value="5">Grande</option>
+        <option value="6">Muy Grande</option>
+        <option value="7">Maximo</option>
         </select>
         <select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;">
-        <option class="heading" selected>- color -</option>
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-        <option value="black">Black</option>
+        <option class="heading" selected>- Color -</option>
+        <option value="red">Rojo</option>
+        <option value="blue">Azul</option>
+        <option value="green">Verde</option>
+        <option value="black">Negro</option>
         </select>
         <select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;">
-        <option class="heading" selected>- background -</option>
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="black">Black</option>
+        <option class="heading" selected>- Fondo-</option>
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="black">Negro</option>
         </select>
         </div>
         <div id="toolBar2">
@@ -207,8 +207,8 @@
         <img class="intLink" title="Paste" onclick="formatDoc('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />
         </div>
         <div id="textBox" contenteditable="true"><h3><center>---Arrastre el Arquetipo---</center></h3></div>
-        <p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Show HTML</label></p>
-        <p><input type="submit" value="Send" /></p>
+        <p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Mostrar etiquetas HTML</label></p>
+        <a href="" class="btn btn-primary text-right">Generar archivo</a>
         </form>
      </div> <!--DERECHA-->
     </div>
