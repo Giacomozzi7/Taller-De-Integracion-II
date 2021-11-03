@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
     <title>Crear Documento</title>
+<!--<script>src="http://code.jquery.com/jquery-1.9.1.min.js"</script>
+    <script src="jquery-ui.js"></script>
+    <script>
+
+function inicio(params) {
+  $(".all_categorias").draggable({
+    appendTo:'body',
+    helper:'clone'
+  });
+  $("#textBox").droppable({
+    activeClass:'claseActivda',
+    hoverClass:'clasesobre'
+  })
+} 
+    </script> -->
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,11 +40,11 @@
         </div>
     </nav>
     <br>
-    <div class="container">
+    <div class="top">
        <h3>Vista: Ver Arquetipos y Crear Documento</h3>
        <a type="button" class="btn btn-primary" href="verjson">Ver Json</a>
        <br>
-
+    </div>
       <div class="izquierda"><!--IZQUIERDA-->
        <!-- Cuando se realiza la consulta a la base de datos, se recorre el arreglo aData recibido para generar los bloques -->
        <div class = "all_categorias">
@@ -47,7 +62,7 @@
                 {%for z in range(0,aData[i][2][k]|length)%}
                 <div class="card text-white bg-dark mb-3" id = "arquetipo" style="max-width: 18rem;">
                     <div class="card-header"><p style="font-weight: bold;">{{aData[i][2][k][z][0]}}</p></div>
-                    <div class="card-body">
+                    <div class="card-body-arq">
                       <p class="card-text">{{aData[i][2][k][z][1]}}</p>
                     </div>
                 </div>
@@ -63,6 +78,7 @@
        {%endfor%}
        </div>
      </div> <!--IZQUIERDA-->
+     <div class="container-creardocumento">
      <div class="derecha"> <!--DERECHA-->
       <script type="text/javascript">
 
@@ -123,8 +139,9 @@
         img.intLink { border: 0; }
         #toolBar1 select { font-size:10px; }
         #textBox {
-        width: 540px;
-        height: 200px;
+        width: 100%;
+        height: 330px;
+        margin-top: 0px;
         border: 1px #000000 solid;
         padding: 12px;
         overflow: scroll;
@@ -206,7 +223,7 @@
         <img class="intLink" title="Copy" onclick="formatDoc('copy');" src="data:image/gif;base64,R0lGODlhFgAWAIQcAB1ChBFNsTRLYyJYwjljwl9vj1iE31iGzF6MnHWX9HOdz5GjuYCl2YKl8ZOt4qezxqK63aK/9KPD+7DI3b/I17LM/MrL1MLY9NHa7OPs++bx/Pv8/f///////////////yH5BAEAAB8ALAAAAAAWABYAAAWG4CeOZGmeaKqubOum1SQ/kPVOW749BeVSus2CgrCxHptLBbOQxCSNCCaF1GUqwQbBd0JGJAyGJJiobE+LnCaDcXAaEoxhQACgNw0FQx9kP+wmaRgYFBQNeAoGihCAJQsCkJAKOhgXEw8BLQYciooHf5o7EA+kC40qBKkAAAGrpy+wsbKzIiEAOw==" />
         <img class="intLink" title="Paste" onclick="formatDoc('paste');" src="data:image/gif;base64,R0lGODlhFgAWAIQUAD04KTRLY2tXQF9vj414WZWIbXmOrpqbmpGjudClFaezxsa0cb/I1+3YitHa7PrkIPHvbuPs+/fvrvv8/f///////////////////////////////////////////////yH5BAEAAB8ALAAAAAAWABYAAAWN4CeOZGmeaKqubGsusPvBSyFJjVDs6nJLB0khR4AkBCmfsCGBQAoCwjF5gwquVykSFbwZE+AwIBV0GhFog2EwIDchjwRiQo9E2Fx4XD5R+B0DDAEnBXBhBhN2DgwDAQFjJYVhCQYRfgoIDGiQJAWTCQMRiwwMfgicnVcAAAMOaK+bLAOrtLUyt7i5uiUhADs=" />
         </div>
-        <div id="textBox" contenteditable="true"><h3><center>---Arrastre el Arquetipo---</center></h3></div>
+        <div id="textBox" contenteditable="true"><h3><center><input type="text" disabled="disabled" id="edit-arq" placeholder="---Arrastre el Arquetipo---"></center></h3></div>
         <p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Mostrar etiquetas HTML</label></p>
         <a href="" class="btn btn-primary text-right">Generar archivo</a>
         </form>
