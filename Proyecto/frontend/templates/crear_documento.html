@@ -50,7 +50,7 @@ function inicio(params) {
        <div class = "all_categorias">
          <!-- For que recorre las colecciones (categorias) y crea los bloques-->
        {%for i in range(0,aData|length)%}
-        <div class="card border-dark">
+        <div class="card-border-dark">
             <h5 class="card-header"><p id="tit" style="font-weight: bold;">Nombre: </p><p id="tit">{{aData[i][0][0]}}</p> | <p id="tit" style="font-weight: bold;">Fecha Creación:</p> <p id="tit">{{aData[i][0][1]}}</p></h5>
             <div class="card-body">
              <!-- For que recorre las subcategorias y crea los bloques -->
