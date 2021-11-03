@@ -17,12 +17,12 @@ h3, #ct {
 
 .all_categorias{
     margin-top:20px;
-
+    overflow: scroll;
 }
 
 .izquierda{
 
-    height: 400px;
+    height: 540px;
     width: 400px;
     display:inline-flex;
     padding-left: 20px;
@@ -35,7 +35,7 @@ h3, #ct {
 .container-creardocumento{
     width: 800px;
     margin-left: 500px;
-    margin-top: -400px;
+    margin-top: -540px;
     padding: 5px;
     display: inline-flexbox;
 }
