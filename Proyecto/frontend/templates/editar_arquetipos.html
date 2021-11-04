@@ -10,6 +10,20 @@
     <link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
     <title>Modificar estructura</title>
   </head>
+  <script type="text/JavaScript">
+    function ConfirmDelete()
+     {
+        var respuesta = confirm("Estas seguro(a) de que desea eliminar el dato seleccionado?");
+        if (respuesta == true) 
+        {
+          return true  
+        }
+        else
+        {
+          return false
+        }
+    }
+  </script>
   <body>
     <div id="mcflurry">
       <span></span>
@@ -64,9 +78,7 @@
             <td>{{aData[i][0][1]}}</td>
             <td>
               <a href="/creardocumento" class="btn btn-success text-right">Editar</a>
-              <button class="btn btn-danger text-right">
-                Borrar
-              </button>
+              <a href="#" class="btn btn-danger text-right" onclick="return ConfirmDelete()">Borrar</a>
             </td>
           </tr>
           {%endfor%}  
