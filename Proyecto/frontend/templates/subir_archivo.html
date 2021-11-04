@@ -11,7 +11,27 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="mcflurry">
+      <span></span>
+    </div>
+    <h3 align="center">⠀⠀⠀⠀</h3>
+    <div id="menu">
+      <ul>
+          <li><a href="/">Página principal</a></li>
+          <li><a href="editararquetipos">Modificar estructura</a></li>
+          <li><a href="/creardocumento">Crear documento</a></li>
+      </ul>
+    </div>
+    <script>
+      var burgerMenu = document.getElementById('mcflurry');
+      var show = document.getElementById('menu');
+
+      burgerMenu.addEventListener('click', function(){
+        this.classList.toggle("close");
+        show.classList.toggle("show");
+      })
+    </script>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">Principal</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,7 +43,7 @@
             <a class="nav-item nav-link active" href="/creardocumento">Crear Documento</a>
           </div>
         </div>
-    </nav>
+    </nav> -->
     <br>
     <div class="container">
         <div class="card border-dark mb-3">
