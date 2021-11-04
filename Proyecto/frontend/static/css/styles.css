@@ -22,8 +22,8 @@ h3, #ct {
 
 .izquierda{
 
-    height: 540px;
-    width: 400px;
+    height: 640px;
+    width: 900px;
     display:inline-flex;
     padding-left: 20px;
 
@@ -33,11 +33,12 @@ h3, #ct {
 }
 
 .container-creardocumento{
-    width: 800px;
-    margin-left: 500px;
-    margin-top: -540px;
+    width: 50%;
+    margin-left: 800px;
+    margin-top: -640px;
     padding: 5px;
     display: inline-flexbox;
+
 }
 
 .card-body-arq{
@@ -47,6 +48,7 @@ h3, #ct {
 
 #edit-arq{
     border: none;
+    
 }
 *{
     margin: 0;
@@ -55,6 +57,7 @@ h3, #ct {
     font-family: sans-serif;
 }
 
+/*css del menu lateral*/
 #mcflurry{
     width: 27px;
     margin: 50px;

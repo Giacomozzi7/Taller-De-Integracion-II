@@ -97,7 +97,6 @@ def editar_arquetipos_2():
     else:
         return redirect(url_for("sube_archivo"))
 
-    
 
 
 #Init
