@@ -1,63 +1,3 @@
-h3, #ct {
-    font-weight: bold;
-}
-
-#arquetipo{
-    display: inline-flex;
-    height: 250px;
-    
-}
-
-#tit{
-    display: inline-flex;
-    margin-left: 4px;
-}
-
-
-
-.all_categorias{
-    margin-top:20px;
-    overflow: scroll;
-}
-
-.izquierda{
-
-    height: 640px;
-    width: 900px;
-    display:inline-flex;
-    padding-left: 20px;
-
-}
-.top{
-    padding-left: 20px;
-}
-
-.container-creardocumento{
-    width: 50%;
-    margin-left: 800px;
-    margin-top: -640px;
-    padding: 5px;
-    display: inline-flexbox;
-
-}
-
-.card-body-arq{
-    width: 100px;
-    height: 100px;
-}
-
-#edit-arq{
-    border: none;
-    
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-/* css del menu lateral
 #mcflurry{
     width: 27px;
     margin: 50px;
@@ -185,4 +125,4 @@ h3, #ct {
     opacity: 1;
     transform: scale(1);
 
-} */
+}
