@@ -4,6 +4,8 @@ from flask import Flask, render_template, request, url_for, send_from_directory,
 from validarjson import validarJSON
 from import_mongo import inicializarBDD
 from exportar_data import exportaData
+from filtrar_data import *
+from updatecategorias import updateCategoria, eliminaCategoria, updateArquetipo
 
 #Se definen directorios para templates y archivos subidos
 UPLOAD_FOLDER = os.path.abspath("./Proyecto/backend/uploads/")
@@ -25,6 +27,8 @@ app = Flask(__name__, template_folder = template_dir, static_folder = static_dir
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 filename = ""
 aData = []
+aCat = []
+aArq = []
 
 #Ruta para Main
 @app.route("/")
@@ -68,36 +72,73 @@ def get_file(filename):
 #Ruta para confeccionar los documentos
 @app.route("/creardocumento")
 def crear_documento():
-    print(aData)
     if len(aData) > 0:
-        return render_template('crear_documento.html', aData = aData)
+        aNData = exportaData()
+        return render_template('crear_documento.html', aData = aNData)
     else:
         return redirect(url_for("sube_archivo"))
 
-#Ruta para editar los arquetipos
-@app.route("/editararquetipos")
-def editar_arquetipos():
+#Ruta para ver y editar categorias
+@app.route("/vercategorias")
+def verCategorias():
+    global aCat
     if len(aData) > 0:
-        return render_template("/editar_arquetipos.html", aData = aData)
+        aCat= filtrarCategoria()
+        return render_template("/ver_categorias.html", aData = aCat)
     else:
         return redirect(url_for("sube_archivo"))
 
-#Ruta para editar los arquetipos
-@app.route("/editararquetipos_2")
-def editar_arquetipos_2():
-    aNData = []
+@app.route('/editarcategorias/<id>', methods=['POST','GET'])
+def editarCategorias(id):
     if len(aData) > 0:
-        for i in range(0,len(aData)):
-            aNuevo = list(itertools.chain.from_iterable(aData[i][2]))
-            for item in aNuevo:
-                aNData.append(item)
+        categoria = aCat[int(id)]
+        return render_template("/editar_categorias.html", aData = categoria)
+    else:
+        return redirect(url_for("sube_archivo"))
 
-        return render_template("/editar_arquetipos_2.html", aNData = aNData)
+@app.route('/actualizar/<id>', methods=['POST'])
+def update_Categoria(id):
+    if request.method =='POST':
+        fecha = request.form['fecha']
+        categoria = request.form['categoria']
+        descripcion = request.form['descripcion']
+        updateCategoria(id,fecha,categoria,descripcion)
+
+        return redirect(url_for('verCategorias'))
+
+@app.route('/eliminar/<string:id>', methods = ['POST','GET'])
+def eliminar_Categoria(id):
+    eliminaCategoria(id)
+    return redirect(url_for('verCategorias'))
+
+#Ruta para ver y editar arquetipos
+@app.route("/verarquetipos")
+def verArquetipo():
+    global aArq
+    if len(aData) > 0:
+        aArq = filtrarArquetipo()
+        return render_template("/ver_arquetipos.html", aNData = aArq)
     
     else:
         return redirect(url_for("sube_archivo"))
 
+@app.route('/editararquetipos/<idArq>', methods=['POST','GET'])
+def editarArquetipos(idArq):
+    if len(aData) > 0:
+        nuevoId = int(idArq)-1000
+        arque = aArq[nuevoId]
+        return render_template("/editar_arquetipos.html", aData = arque)
+    else:
+        return redirect(url_for("sube_archivo"))
 
+@app.route('/actualizarArq/<idArq>', methods=['POST'])
+def update_Arquetipo(idArq):
+    if request.method =='POST':
+        titulo = request.form['titulo']
+        parrafo = request.form['parrafo']
+        updateArquetipo(idArq,titulo,parrafo)
+
+        return redirect(url_for('verArquetipo'))
 
 #Init
 if __name__ == "__main__":

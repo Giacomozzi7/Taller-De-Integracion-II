@@ -29,10 +29,10 @@
     {% include 'menuDesplegable.html' %}
     <br>
     <div class="container">
-      <h3>Vista: Modificar estructura (Arquetipos)</h3>
+      <h3>Vista: Modificar estructura (Categorías)</h3>
       <div class="row mt-5">
         <div class="col-3 offset-9">
-          <a href="/editararquetipos" class="btn btn-primary text-right">Volver</a>
+          <a href="/verarquetipos" class="btn btn-primary text-right">Ver arquetipos</a>
         </div>
       </div>
       <br>
@@ -47,23 +47,25 @@
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Arquetipos</th>
-            <th scope="col">Descripción</th>
+            <th scope="col">Categorías</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Descripcion</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {%for i in range(0,aNData|length)%}
+          {%for i in range(0,aData|length)%}
           <tr>
-            <th scope="row">{{i}}</th>
-            <td>{{aNData[i][0]}}</td>
-            <td>{{aNData[i][1]}}</td>
+            <th scope="row">{{aData[i][0]}}</th>
+            <td>{{aData[i][2]}}</td>
+            <td>{{aData[i][1]}}</td>
+            <td style="width:40%">{{aData[i][3]}}</td>
             <td>
-              <a href="/creardocumento" class="btn btn-success text-right">Editar</a>
-              <a href="#" class="btn btn-danger text-right" onclick="return ConfirmDelete()">Borrar</a>
+              <a href="/editarcategorias/{{aData[i][0]}}" class="btn btn-success text-right" >Editar</a>
+              <a href="/eliminar/{{aData[i][0]}}" class="btn btn-danger text-right" onclick="return ConfirmDelete()">Borrar</a>
             </td>
           </tr>
-          {%endfor%}    
+          {%endfor%}  
         </tbody>
       </table>
 

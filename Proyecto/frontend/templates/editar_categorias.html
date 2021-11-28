@@ -43,19 +43,23 @@
         </div>
       </div>
       <br>  
-      <form action="/actualizarArq/{{aData[0]}}" method="POST">
+      <form action="/actualizar/{{aData[0]}}" method="POST">
         <div class="form-group">
             <p><b>ID</b></p>
-            <input type="text" name="id_arquetipo" value="{{aData[0]}}" class="form-control" disabled>
+            <input type="text" name="id_cat" value="{{aData[0]}}" class="form-control" disabled>
           </div>
         <div class="form-group">
-          <p><b>Titulo</b></p>
-          <input type="text" name="titulo" value="{{aData[1]}}" class="form-control">
+          <p><b>Fecha</b></p>
+          <input type="text" name="fecha" value="{{aData[1]}}" class="form-control">
         </div>
         <div class="form-group">
-            <p><b>Párrafo</b></p>
-          <input type="text" name="parrafo" value="{{aData[2]}}" class="form-control">
+            <p><b>Categoría</b></p>
+          <input type="text" name="categoria" value="{{aData[2]}}" class="form-control">
         </div>
+        <div class="form-group">
+            <p><b>Descripcion</b></p>
+            <input type="text" name="descripcion" value="{{aData[3]}}" class="form-control">
+          </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block">
             Actualizar
