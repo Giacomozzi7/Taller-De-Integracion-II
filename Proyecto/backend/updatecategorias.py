@@ -24,10 +24,18 @@ def eliminaCategoria(id):
     db.arquetipos.delete_one({"id" : int(id)})
 
 
-#Funcion para actualizar arquetipos
-def updateArquetipo(idArq,titulo,parrafo):
-    id_subcat = 102
-    idArq = int(idArq)
-    print('update')
+#Funcion para actualizar subcategorias
+def updateSubcategoria(idSubcat,titulo,descripcion):
+    idSubcat = int(idSubcat)
+    db.arquetipos.update(
+    {'subcategoria':{'$elemMatch':{'id_subcat': idSubcat}}},
+    {'$set':{'subcategoria.$.titulo_subcat':titulo,'subcategoria.$.descripcion':descripcion}}
+    )
 
-    #print(idArq,titulo,parrafo)
+#Funcion para eliminar subcategorias
+def eliminarSubcategoria(idSubcat):
+    buscar = db.arquetipos.update_one(
+    {'subcategoria':{'$elemMatch':{'id_subcat': int(idSubcat)}}},
+    {'$pull':{'subcategoria':{'id_subcat': int(idSubcat)}}}
+    )
+

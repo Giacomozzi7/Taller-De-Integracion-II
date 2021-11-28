@@ -29,38 +29,39 @@
     {% include 'menuDesplegable.html' %}
     <br>
     <div class="container">
-      <h3>Vista: Modificar estructura (Arquetipos)</h3>
+      <h3>Vista: Editar subcategorías</h3>
       <div class="row mt-5">
         <div class="col-3 offset-9">
-          <a href="/vercategorias" class="btn btn-primary text-right">Volver</a>
+          <a href="/versubcategoria" class="btn btn-primary text-right">Volver</a>
         </div>
       </div>
       <br>
       <div class="card text-white bg-warning mb-3">
         <div class="card-header">Modificación de registros</div>
         <div class="card-body">
-          <p class="card-text">La siguiente vista permite observar y modificar la estructura del archivo .JSON almacenado en la base de datos.</p>
+          <p class="card-text">Formulario de edición de subcategorías</p>
         </div>
       </div>
       <br>  
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Arquetipos</th>
-            <th scope="col">Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%for i in range(0,aNData|length)%}
-          <tr>
-            <th scope="row">{{aNData[i][0]}}</th>
-            <td>{{aNData[i][1]}}</td>
-            <td>{{aNData[i][2]}}</td>
-          </tr>
-          {%endfor%}    
-        </tbody>
-      </table>
+      <form action="/actualizarSubcat/{{aData[0]}}" method="POST">
+        <div class="form-group">
+            <p><b>ID</b></p>
+            <input type="text" name="id_cat" value="{{aData[0]}}" class="form-control" disabled>
+          </div>
+        <div class="form-group">
+          <p><b>Subcategoría</b></p>
+          <input type="text" name="titulo_subcat" value="{{aData[1]}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <p><b>Descripción</b></p>
+          <input type="text" name="descripcion" value="{{aData[2]}}" class="form-control">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Actualizar
+          </button>
+        </div>
+      </form>
 
     </div>
 

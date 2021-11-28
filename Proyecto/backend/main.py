@@ -5,7 +5,7 @@ from validarjson import validarJSON
 from import_mongo import inicializarBDD
 from exportar_data import exportaData
 from filtrar_data import *
-from updatecategorias import updateCategoria, eliminaCategoria, updateArquetipo
+from updatecategorias import updateCategoria, eliminaCategoria, updateSubcategoria, eliminarSubcategoria
 
 #Se definen directorios para templates y archivos subidos
 UPLOAD_FOLDER = os.path.abspath("./Proyecto/backend/uploads/")
@@ -78,7 +78,12 @@ def crear_documento():
     else:
         return redirect(url_for("sube_archivo"))
 
-#Ruta para ver y editar categorias
+
+#------------------------------------------------------------------------------------------------------------------
+#Funciones para ver y editar categorias, subcategorias y arquetipos
+#------------------------------------------------------------------------------------------------------------------
+
+#Ruta para ver categorias
 @app.route("/vercategorias")
 def verCategorias():
     global aCat
@@ -88,6 +93,7 @@ def verCategorias():
     else:
         return redirect(url_for("sube_archivo"))
 
+#Ruta para editar categoria
 @app.route('/editarcategorias/<id>', methods=['POST','GET'])
 def editarCategorias(id):
     if len(aData) > 0:
@@ -96,6 +102,7 @@ def editarCategorias(id):
     else:
         return redirect(url_for("sube_archivo"))
 
+#Ruta para actualizar categoria
 @app.route('/actualizar/<id>', methods=['POST'])
 def update_Categoria(id):
     if request.method =='POST':
@@ -106,12 +113,13 @@ def update_Categoria(id):
 
         return redirect(url_for('verCategorias'))
 
+#Ruta para eliminar categoria
 @app.route('/eliminar/<string:id>', methods = ['POST','GET'])
 def eliminar_Categoria(id):
     eliminaCategoria(id)
     return redirect(url_for('verCategorias'))
 
-#Ruta para ver y editar arquetipos
+#Ruta para ver arquetipos
 @app.route("/verarquetipos")
 def verArquetipo():
     global aArq
@@ -122,24 +130,44 @@ def verArquetipo():
     else:
         return redirect(url_for("sube_archivo"))
 
-@app.route('/editararquetipos/<idArq>', methods=['POST','GET'])
-def editarArquetipos(idArq):
+#Ruta para ver subcategorias
+@app.route("/versubcategoria")
+def verSubcategoria():
+    global aSubcat
     if len(aData) > 0:
-        nuevoId = int(idArq)-1000
-        arque = aArq[nuevoId]
-        return render_template("/editar_arquetipos.html", aData = arque)
+        aSubcat = filtrarSubcategoria()
+        return render_template("/ver_subcategorias.html", aData = aSubcat)
+    
     else:
         return redirect(url_for("sube_archivo"))
 
-@app.route('/actualizarArq/<idArq>', methods=['POST'])
-def update_Arquetipo(idArq):
+#Ruta para editar subcategoria
+@app.route('/editarsubcategoria/<idSubcat>', methods=['POST','GET'])
+def editarSubcategorias(idSubcat):
+    if len(aData) > 0:
+        subcategoria = aSubcat[int(idSubcat)-100]
+        return render_template("/editar_subcategorias.html", aData = subcategoria)
+    else:
+        return redirect(url_for("sube_archivo"))
+
+#Ruta para actualizar subcategoria
+@app.route('/actualizarSubcat/<idSubcat>', methods=['POST'])
+def update_Subcategoria(idSubcat):
     if request.method =='POST':
-        titulo = request.form['titulo']
-        parrafo = request.form['parrafo']
-        updateArquetipo(idArq,titulo,parrafo)
+        titulo = request.form['titulo_subcat']
+        descripcion = request.form['descripcion']
+        updateSubcategoria(idSubcat,titulo,descripcion)
 
-        return redirect(url_for('verArquetipo'))
+        return redirect(url_for('verSubcategoria'))
 
-#Init
+#Ruta para eliminar subcategoria
+@app.route('/eliminarsubcategoria/<string:idSubcat>', methods = ['POST','GET'])
+def eliminar_Subcategoria(idSubcat):
+    eliminarSubcategoria(idSubcat)
+    return redirect(url_for('verSubcategoria'))
+
+#------------------------------------------------------------------------------------------------------------------
+#Inicializacion
+#------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     app.run(debug=True)

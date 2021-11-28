@@ -34,3 +34,16 @@ def filtrarArquetipo():
                 aArq.append(tArq)
     return aArq
 
+#Busca todas las subcategorias para ser mostrados en las tablas
+def filtrarSubcategoria():
+    aSubcat = []
+    buscar = db.arquetipos.find({}, {"subcategoria":1})
+    for busq in buscar: 
+        subcat = busq['subcategoria']
+        for val in subcat:
+            tSubcat = (val['id_subcat'],val['titulo_subcat'],val['descripcion'])
+            aSubcat.append(tSubcat)
+       
+    return aSubcat
+
+
