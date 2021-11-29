@@ -18,14 +18,6 @@
             <li><a href="/creardocumento">Crear documento</a></li>
         </ul>
       </div>
-      <script>
-        var burgerMenu = document.getElementById('mcflurry');
-        var show = document.getElementById('menu');
-  
-        burgerMenu.addEventListener('click', function(){
-          this.classList.toggle("close");
-          show.classList.toggle("show");
-        })
-      </script>
+      <script src="{{ url_for('static', filename='javascript/menuDesplegable.js') }}"></script>
 </body>
 </html>

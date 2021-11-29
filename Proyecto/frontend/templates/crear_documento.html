@@ -16,7 +16,7 @@
     <script type="text/javascript" src={{url_for('static', filename='/richtexteditor/plugins/all_plugins.js')}}></script>  
 
     <title>Crear Documento</title>
-<!--<script>src="http://code.jquery.com/jquery-1.9.1.min.js"</script>
+<!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="jquery-ui.js"></script>
     <script>
 
@@ -76,25 +76,13 @@ function inicio(params) {
         <br>
        {%endfor%}
     </div>
-    
-
     <div id="div_editor1" class="derecha"> 
       <p>Documento inicial</p> 
     </div> 
   </div>
-  
   </div>
-  
 
-
-  <script>
-    var editor1 = new RichTextEditor("#div_editor1");
-
-    function downloadPDFDialog() {
-      editor1.execCommand("html2pdf");
-	  }
-  </script>
-
+  <script src="{{ url_for('static', filename='javascript/editor1.js') }}"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

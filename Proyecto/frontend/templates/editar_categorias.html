@@ -11,20 +11,7 @@
     <link rel="stylesheet" href={{ url_for('static', filename='css/menu.css') }}>
     <title>Modificar estructura</title>
   </head>
-  <script type="text/JavaScript">
-    function ConfirmDelete()
-     {
-        var respuesta = confirm("Estas seguro(a) de que desea eliminar el dato seleccionado?");
-        if (respuesta == true) 
-        {
-          return true  
-        }
-        else
-        {
-          return false
-        }
-    }
-  </script>
+  <script src="{{ url_for('static', filename='javascript/confirmaBorrar.js') }}"></script>
   <body>
     <div class="container">
       {% include 'menuDesplegable.html' %}
@@ -57,7 +44,7 @@
           <input type="text" name="categoria" value="{{aData[2]}}" class="form-control">
         </div>
         <div class="form-group">
-            <p><b>Descripcion</b></p>
+            <p><b>Descripción</b></p>
             <input type="text" name="descripcion" value="{{aData[3]}}" class="form-control">
           </div>
         <div class="form-group">
