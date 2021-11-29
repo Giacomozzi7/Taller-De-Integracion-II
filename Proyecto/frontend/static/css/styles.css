@@ -56,3 +56,15 @@ h3, #ct {
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+body{
+
+    background-image: url("https://i.pinimg.com/originals/92/94/1d/92941d986586249ee79a24065f68c910.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.table{
+    background-color:rgba(255,255,255,0.8);
+    border-radius: 10px;
+}
