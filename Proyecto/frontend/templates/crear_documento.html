@@ -37,10 +37,13 @@ function inicio(params) {
     <div class="top">
        {% include 'menuDesplegable.html' %}
        <br>
-       <h3>Vista: Ver Arquetipos y Crear Documento</h3>
+       <h3 id ='hola'>Vista: Ver Arquetipos y Crear Documento</h3>
        <a type="button" class="btn btn-primary" href="verjson">Ver Json</a>
        <a type="button" class="btn btn-warning" onclick="downloadPDFDialog()">
-        Descargar PDF
+        Exportar PDF
+       </a>
+       <a type="button" class="btn btn-success" onclick="exportaData()">
+        Exportar JSON
        </a>
        <br>
     </div>
@@ -92,7 +95,14 @@ function inicio(params) {
 
     function downloadPDFDialog() {
       editor1.execCommand("html2pdf");
+
 	  }
+
+    function exportaData(){
+      document.getElementById("hola").innerHTML = editor1.getPlainText();
+    }
+    
+
   </script>
 
 
