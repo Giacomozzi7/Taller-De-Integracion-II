@@ -60,7 +60,7 @@ function RTE_Plugin_Html2PDF() {
 
 	obj.DoHtml2PDF = function () {
 
-		var dialoginner = editor.createDialog("Html2PDF", "rte-dialog-html2pdf");
+		var dialoginner = editor.createDialog("Exportación PDF y JPEG - Grupo 7", "rte-dialog-html2pdf");
 
 		var div2 = __Append(dialoginner, "div", "position:relative;text-align:center;");
 
@@ -109,14 +109,14 @@ function RTE_Plugin_Html2PDF() {
 						bin[i] = str.charCodeAt(i);
 					var blob = new Blob([new Uint8Array(bin)], { type: "application/pdf" })
 					var url = URL.createObjectURL(blob);
-					div2.innerHTML = Math.ceil(str.length / 1024) + "KB Exported<br/><a href='" + url + "' target=_blank>Download PDF</a>";
+					div2.innerHTML = Math.ceil(str.length / 1024) + "KB Exportados<br/><a href='" + url + "' target=_blank>Descargar PDF</a>";
 
 					var pdflink = div2.querySelector("a");
 
 					var date = new Date();
 					var ymd = String(date.getFullYear() * 10000 + (date.getMonth() + 1) * 100 + date.getDate()).substring(2);
 					var hms = String(1000000 + date.getHours() * 10000 + date.getMinutes() * 100 + date.getSeconds()).substring(1);
-					pdflink.download = "Export-" + ymd + "-" + hms + ".pdf";
+					pdflink.download = "Exportacion-" + ymd + "-" + hms + ".pdf";
 
 					//a.rel = 'noopener'
 
@@ -129,8 +129,8 @@ function RTE_Plugin_Html2PDF() {
 					var imglink = __Append(imgrect, "a");
 					imglink.setAttribute("href", imgurl);
 					imglink.setAttribute("target", "_blank");
-					imglink.download = "Export-" + ymd + "-" + hms + ".jpg";
-					imglink.innerText = "Download Img";
+					imglink.download = "Exportacion-" + ymd + "-" + hms + ".jpg";
+					imglink.innerText = "Descargar como imágen (JPG)";
 
 					//dialoginner.close();
 
