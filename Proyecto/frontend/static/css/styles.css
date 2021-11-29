@@ -13,48 +13,8 @@ h3, #ct {
     margin-left: 4px;
 }
 
-
-
-.all_categorias{
-    margin-top:20px;
-    overflow: scroll;
-}
-
-.izquierda{
-
-    height: 640px;
-    width: 900px;
-    display:inline-flex;
-    padding-left: 20px;
-
-}
 .top{
-    padding-left: 20px;
-}
-
-.container-creardocumento{
-    width: 50%;
-    margin-left: 800px;
-    margin-top: -640px;
-    padding: 5px;
-    display: inline-flexbox;
-
-}
-
-.card-body-arq{
-    width: 100px;
-    height: 100px;
-}
-
-#edit-arq{
-    border: none;
-    
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+    margin-left: 2vh;
 }
 
 body{
@@ -68,3 +28,27 @@ body{
     background-color:rgba(255,255,255,0.8);
     border-radius: 10px;
 }
+
+.derecha{
+    margin-top: 3vh;
+    left: 3vh;
+    width:65vw;
+    height:77vh;
+
+}
+
+.all_categorias{
+    background-color:rgba(255,255,255,0.8);
+    margin-left:2vh;
+    font-size: 1.7vh;
+    width:30vw;
+    margin-top:3vh;
+    height: 77vh;
+    overflow: scroll;
+    border-radius: 10px;
+}
+
+.derizq{
+    display:inline-flex;
+}
+
