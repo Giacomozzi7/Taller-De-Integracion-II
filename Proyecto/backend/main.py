@@ -145,7 +145,11 @@ def verSubcategoria():
 @app.route('/editarsubcategoria/<idSubcat>', methods=['POST','GET'])
 def editarSubcategorias(idSubcat):
     if len(aData) > 0:
-        subcategoria = aSubcat[int(idSubcat)-100]
+        for scat in aSubcat:
+            print(int(scat[0]), idSubcat)
+            nscat = int(scat[0])
+            if nscat== int(idSubcat):
+                subcategoria = scat
         return render_template("/editar_subcategorias.html", aData = subcategoria)
     else:
         return redirect(url_for("sube_archivo"))

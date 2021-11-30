@@ -34,12 +34,14 @@ body{
     border-radius: 10px;
 }
 
+
 .derecha{
     margin-top: 3vh;
     left: 3vh;
     width:65vw;
-    height:77vh;
+    max-height:77vh;
 }
+
 
 .all_categorias{
     background-color:rgba(255,255,255,0.8);
@@ -55,6 +57,7 @@ body{
 .derizq{
     display:inline-flex;
 }
+
 
 #magicButtons{
     display: inline-block;
