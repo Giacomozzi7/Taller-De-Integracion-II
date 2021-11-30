@@ -58,7 +58,6 @@ def sube_archivo():
 #Ruta para ver el archivo json subido
 @app.route("/verjson")
 def ver_json():
-    print("filename",filename)
     if filename != "": #si se ha subido algun archivo, lo muestra
         return redirect(url_for("get_file", filename = filename))
     else: #sino devuelve a crear_documento
@@ -146,7 +145,6 @@ def verSubcategoria():
 def editarSubcategorias(idSubcat):
     if len(aData) > 0:
         for scat in aSubcat:
-            print(int(scat[0]), idSubcat)
             nscat = int(scat[0])
             if nscat== int(idSubcat):
                 subcategoria = scat
