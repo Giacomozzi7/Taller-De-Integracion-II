@@ -27,4 +27,20 @@ function exportaJSON(){
   linkElement.setAttribute('href', dataUri);
   linkElement.setAttribute('download', exportFileDefaultName);
   linkElement.click();
+
+  editor1.insertHTML('<b>Que pasa chavales todo bien todo correcto</b>')
+}
+
+function insertarArquetipos(z){
+  num_arquetipo = z.split(/([0-9]+)/)
+  num_arquetipo = num_arquetipo[1]
+
+  sTitulo    = document.getElementById("tit_arquetipo_"+num_arquetipo).innerHTML;
+  sContenido = document.getElementById("body_arquetipo_"+num_arquetipo).innerHTML;
+
+  sHTML = '<h4 style=font-size:18px; >'+sTitulo+'</h4><p style=font-size:15px>'+sContenido+'<p>'
+
+  editor1.insertHTML(sHTML)
+
+
 }

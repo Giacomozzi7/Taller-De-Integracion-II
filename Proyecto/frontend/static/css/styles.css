@@ -2,10 +2,15 @@ h3, #ct {
     font-weight: bold;
 }
 
-#arquetipo{
+.card.text-white.bg-dark.mb-3{
     display: inline-flex;
     height: 250px;
+    cursor: pointer;
     
+}
+
+.card.text-white.bg-dark.mb-3:hover{
+    color: green !important;
 }
 
 #tit{
@@ -34,7 +39,6 @@ body{
     left: 3vh;
     width:65vw;
     height:77vh;
-
 }
 
 .all_categorias{

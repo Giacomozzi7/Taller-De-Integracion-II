@@ -61,13 +61,15 @@ function inicio(params) {
                 <h5 class="card-header"><p id="tit" style="font-weight: bold;">Subcategoría:</p><p id="tit">{{aData[i][1][k]}}</p></h5>
                 <div class="card-body">
                 <!-- For que recorre los arquetipos y crea los bloques -->
+                
                 {%for z in range(0,aData[i][2][k]|length)%}
-                <div class="card text-white bg-dark mb-3" id = "arquetipo" style="max-width: 20vh;min-width: 20vh;">
-                    <div class="card-header"><p style="font-weight: bold;">{{aData[i][2][k][z][0]}}</p></div>
+                <div class="card text-white bg-dark mb-3" id = "{{aData[i][2][k][z][0]}}" style="max-width: 20vh;min-width: 20vh; max-height: 20vh;" onclick="insertarArquetipos(this.id)">
+                    <div class="card-header"><p style="font-weight: bold;" id ="tit_{{aData[i][2][k][z][0]}}">{{aData[i][2][k][z][0]}}</p></div>
                     <div class="card-body-arq">
-                      <p class="card-text">{{aData[i][2][k][z][1]}}</p>
+                      <p class="card-text" id ="body_{{aData[i][2][k][z][0]}}">{{aData[i][2][k][z][1]}}</p>
                     </div>
                 </div>
+                
                 {%endfor%}
                 </div>
             </div>
