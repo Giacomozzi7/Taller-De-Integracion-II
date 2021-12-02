@@ -28,7 +28,7 @@ function exportaJSON(){
   linkElement.setAttribute('download', exportFileDefaultName);
   linkElement.click();
 
-  editor1.insertHTML('<b>Que pasa chavales todo bien todo correcto</b>')
+  editor1.insertHTML('<b></b>')
 }
 
 function insertarArquetipos(z){
