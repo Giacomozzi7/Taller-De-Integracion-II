@@ -1,1 +1,176 @@
-[{"id": 0, "categoria": "categoria_1", "descripcion": "Integer aliquam eros ut lobortis egestas", "fecha_creacion": "2021-02-13", "subcategoria": [{"id_subcat": 100, "titulo_subcat": "subcategoria_1", "descripcion": "Sed scelerisque sapien id libero vulputate, id vestibulum lacus gravida", "arquetipos": [{"id_arquetipo": 1000, "titulo_arquetipo": "arquetipo_1", "parrafo": "Phasellus quis felis eget arcu suscipit venenatis"}, {"id_arquetipo": 1001, "titulo_arquetipo": "arquetipo_2", "parrafo": "Maecenas egestas tempus nisl, a facilisis magna ultricies sit amet"}]}, {"id_subcat": 101, "titulo_subcat": "subcategoria_2", "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis", "arquetipos": [{"id_arquetipo": 1002, "titulo_arquetipo": "arquetipo_3", "parrafo": "Vestibulum tellus lacus, porttitor a faucibus nec, vehicula vel nulla"}, {"id_arquetipo": 1003, "titulo_arquetipo": "arquetipo_4", "parrafo": "Suspendisse quis pharetra velit"}, {"id_arquetipo": 1004, "titulo_arquetipo": "arquetipo_5", "parrafo": "Sed ligula lacus, efficitur eget tellus a, blandit lobortis lorem"}, {"id_arquetipo": 1005, "titulo_arquetipo": "arquetipo_6", "parrafo": "Integer a elit id ligula pretium scelerisque"}]}]}, {"id": 1, "categoria": "categoria_2", "descripcion": "Suspendisse pulvinar diam justo", "fecha_creacion": "2021-11-24", "subcategoria": [{"id_subcat": 102, "titulo_subcat": "subcategoria_3", "descripcion": "Morbi a felis tincidunt, vestibulum neque quis, pellentesque velit", "arquetipos": [{"id_arquetipo": 1006, "titulo_arquetipo": "arquetipo_7", "parrafo": "Phasellus sodales nisi sit amet tempus convallis"}]}, {"id_subcat": 103, "titulo_subcat": "subcategoria_4", "descripcion": "Integer tempor dui ante, ac congue felis vulputate tincidunt", "arquetipos": [{"id_arquetipo": 1007, "titulo_arquetipo": "arquetipo_8", "parrafo": "Donec quis semper eros. Aliquam eu efficitur enim"}, {"id_arquetipo": 1008, "titulo_arquetipo": "arquetipo_9", "parrafo": "Maecenas egestas tempus nisl, a facilisis magna ultricies sit amet"}, {"id_arquetipo": 1009, "titulo_arquetipo": "arquetipo_10", "parrafo": "Donec quis semper eros. Aliquam eu efficitur enim"}]}]}, {"id": 2, "categoria": "categoria_3", "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis", "fecha_creacion": "2021-11-09", "subcategoria": [{"id_subcat": 104, "titulo_subcat": "subcategoria_5", "descripcion": "Sed scelerisque sapien id libero vulputate, id vestibulum lacus gravida", "arquetipos": [{"id_arquetipo": 1010, "titulo_arquetipo": "arquetipo_11", "parrafo": "Suspendisse quis pharetra velit"}]}]}, {"id": 3, "categoria": "categoria_4", "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis", "fecha_creacion": "2021-03-06", "subcategoria": [{"id_subcat": 105, "titulo_subcat": "subcategoria_6", "descripcion": "Proin mattis nisl nec dui finibus, at venenatis neque mollis", "arquetipos": [{"id_arquetipo": 1011, "titulo_arquetipo": "arquetipo_12", "parrafo": "Vestibulum tellus lacus, porttitor a faucibus nec, vehicula vel nulla"}, {"id_arquetipo": 1012, "titulo_arquetipo": "arquetipo_13", "parrafo": "Integer a elit id ligula pretium scelerisque"}, {"id_arquetipo": 1013, "titulo_arquetipo": "arquetipo_14", "parrafo": "Aenean maximus semper arcu, a blandit lectus vulputate sollicitudin"}]}]}, {"id": 4, "categoria": "categoria_5", "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis", "fecha_creacion": "2021-04-28", "subcategoria": [{"id_subcat": 106, "titulo_subcat": "subcategoria_7", "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis", "arquetipos": [{"id_arquetipo": 1014, "titulo_arquetipo": "arquetipo_15", "parrafo": "Aliquam tristique, sapien eget vestibulum finibus, nisl ipsum blandit dui, at iaculis felis orci eu tortor"}, {"id_arquetipo": 1015, "titulo_arquetipo": "arquetipo_16", "parrafo": "Phasellus quis felis eget arcu suscipit venenatis"}, {"id_arquetipo": 1016, "titulo_arquetipo": "arquetipo_17", "parrafo": "Phasellus sodales nisi sit amet tempus convallis"}]}]}]
+[
+    {
+        "id": 0,
+        "categoria": "categoria_1",
+        "descripcion": "Integer aliquam eros ut lobortis egestas",
+        "fecha_creacion": "2021-02-13",
+        "subcategoria": [
+            {
+                "id_subcat": 100,
+                "titulo_subcat": "subcategoria_1",
+                "descripcion": "Sed scelerisque sapien id libero vulputate, id vestibulum lacus gravida",
+                "arquetipos": [
+                    {
+                        "id_arquetipo": 1000,
+                        "titulo_arquetipo": "arquetipo_1",
+                        "parrafo": "Phasellus quis felis eget arcu suscipit venenatis"
+                    },
+                    {
+                        "id_arquetipo": 1001,
+                        "titulo_arquetipo": "arquetipo_2",
+                        "parrafo": "Maecenas egestas tempus nisl, a facilisis magna ultricies sit amet"
+                    }
+                ]
+            },
+            {
+                "id_subcat": 101,
+                "titulo_subcat": "subcategoria_2",
+                "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis",
+                "arquetipos": [
+                    {
+                        "id_arquetipo": 1002,
+                        "titulo_arquetipo": "arquetipo_3",
+                        "parrafo": "Vestibulum tellus lacus, porttitor a faucibus nec, vehicula vel nulla"
+                    },
+                    {
+                        "id_arquetipo": 1003,
+                        "titulo_arquetipo": "arquetipo_4",
+                        "parrafo": "Suspendisse quis pharetra velit"
+                    },
+                    {
+                        "id_arquetipo": 1004,
+                        "titulo_arquetipo": "arquetipo_5",
+                        "parrafo": "Sed ligula lacus, efficitur eget tellus a, blandit lobortis lorem"
+                    },
+                    {
+                        "id_arquetipo": 1005,
+                        "titulo_arquetipo": "arquetipo_6",
+                        "parrafo": "Integer a elit id ligula pretium scelerisque"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "categoria": "categoria_2",
+        "descripcion": "Suspendisse pulvinar diam justo",
+        "fecha_creacion": "2021-11-24",
+        "subcategoria": [
+            {
+                "id_subcat": 102,
+                "titulo_subcat": "subcategoria_3",
+                "descripcion": "Morbi a felis tincidunt, vestibulum neque quis, pellentesque velit",
+                "arquetipos": [
+                    {
+                        "id_arquetipo": 1006,
+                        "titulo_arquetipo": "arquetipo_7",
+                        "parrafo": "Phasellus sodales nisi sit amet tempus convallis"
+                    }
+                ]
+            },
+            {
+                "id_subcat": 103,
+                "titulo_subcat": "subcategoria_4",
+                "descripcion": "Integer tempor dui ante, ac congue felis vulputate tincidunt",
+                "arquetipos": [
+                    {
+                        "id_arquetipo": 1007,
+                        "titulo_arquetipo": "arquetipo_8",
+                        "parrafo": "Donec quis semper eros. Aliquam eu efficitur enim"
+                    },
+                    {
+                        "id_arquetipo": 1008,
+                        "titulo_arquetipo": "arquetipo_9",
+                        "parrafo": "Maecenas egestas tempus nisl, a facilisis magna ultricies sit amet"
+                    },
+                    {
+                        "id_arquetipo": 1009,
+                        "titulo_arquetipo": "arquetipo_10",
+                        "parrafo": "Donec quis semper eros. Aliquam eu efficitur enim"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "categoria": "categoria_3",
+        "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis",
+        "fecha_creacion": "2021-11-09",
+        "subcategoria": [
+            {
+                "id_subcat": 104,
+                "titulo_subcat": "subcategoria_5",
+                "descripcion": "Sed scelerisque sapien id libero vulputate, id vestibulum lacus gravida",
+                "arquetipos": [
+                    {
+                        "id_arquetipo": 1010,
+                        "titulo_arquetipo": "arquetipo_11",
+                        "parrafo": "Suspendisse quis pharetra velit"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "categoria": "categoria_4",
+        "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis",
+        "fecha_creacion": "2021-03-06",
+        "subcategoria": [
+            {
+                "id_subcat": 105,
+                "titulo_subcat": "subcategoria_6",
+                "descripcion": "Proin mattis nisl nec dui finibus, at venenatis neque mollis",
+                "arquetipos": [
+                    {
+                        "id_arquetipo": 1011,
+                        "titulo_arquetipo": "arquetipo_12",
+                        "parrafo": "Vestibulum tellus lacus, porttitor a faucibus nec, vehicula vel nulla"
+                    },
+                    {
+                        "id_arquetipo": 1012,
+                        "titulo_arquetipo": "arquetipo_13",
+                        "parrafo": "Integer a elit id ligula pretium scelerisque"
+                    },
+                    {
+                        "id_arquetipo": 1013,
+                        "titulo_arquetipo": "arquetipo_14",
+                        "parrafo": "Aenean maximus semper arcu, a blandit lectus vulputate sollicitudin"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "categoria": "categoria_5",
+        "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis",
+        "fecha_creacion": "2021-04-28",
+        "subcategoria": [
+            {
+                "id_subcat": 106,
+                "titulo_subcat": "subcategoria_7",
+                "descripcion": "Curabitur dapibus, dolor id scelerisque malesuada, mi enim gravida augue, eget lobortis turpis ante ac turpis",
+                "arquetipos": [
+                    {
+                        "id_arquetipo": 1014,
+                        "titulo_arquetipo": "arquetipo_15",
+                        "parrafo": "Aliquam tristique, sapien eget vestibulum finibus, nisl ipsum blandit dui, at iaculis felis orci eu tortor"
+                    },
+                    {
+                        "id_arquetipo": 1015,
+                        "titulo_arquetipo": "arquetipo_16",
+                        "parrafo": "Phasellus quis felis eget arcu suscipit venenatis"
+                    },
+                    {
+                        "id_arquetipo": 1016,
+                        "titulo_arquetipo": "arquetipo_17",
+                        "parrafo": "Phasellus sodales nisi sit amet tempus convallis"
+                    }
+                ]
+            }
+        ]
+    }
+]
