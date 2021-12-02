@@ -8,7 +8,7 @@ db = client['data']
 coleccion = db['arquetipos']
 
 #Busca todas las categorias para ser mostradas en las tablas
-def filtrarCategoria():
+def filtrarCategoria(): #Recorre colección
     aCat =[]
     buscar = db.arquetipos.find({}, {"categoria":1,"_id":0,"id":1,"fecha_creacion":1,"descripcion":1})
 
@@ -21,21 +21,8 @@ def filtrarCategoria():
 
 #filtrarCategoria()
 
-#Busca todos los arquetipos para ser mostrados en las tablas
-def filtrarArquetipo():
-    aArq = []
-    buscar = db.arquetipos.find({}, {"subcategoria":1})
-    for busq in buscar: 
-        subcat = busq['subcategoria']
-        for arq in subcat:
-            arque = arq['arquetipos']
-            for data in arque:
-                tArq = (data['id_arquetipo'],data['titulo_arquetipo'],data['parrafo'])
-                aArq.append(tArq)
-    return aArq
-
 #Busca todas las subcategorias para ser mostrados en las tablas
-def filtrarSubcategoria():
+def filtrarSubcategoria(): #Recorre categoría
     aSubcat = []
     buscar = db.arquetipos.find({}, {"subcategoria":1})
     for busq in buscar: 
@@ -46,4 +33,15 @@ def filtrarSubcategoria():
        
     return aSubcat
 
-
+#Busca todos los arquetipos para ser mostrados en las tablas
+def filtrarArquetipo(): #Recorre subcategoría
+    aArq = []
+    buscar = db.arquetipos.find({}, {"subcategoria":1})
+    for busq in buscar: 
+        subcat = busq['subcategoria']
+        for arq in subcat:
+            arque = arq['arquetipos']
+            for data in arque:
+                tArq = (data['id_arquetipo'],data['titulo_arquetipo'],data['parrafo'])
+                aArq.append(tArq)
+    return aArq

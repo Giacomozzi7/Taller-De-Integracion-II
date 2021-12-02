@@ -79,7 +79,7 @@ def crear_documento():
 
 
 #------------------------------------------------------------------------------------------------------------------
-#Funciones para ver y editar categorias, subcategorias y arquetipos
+#Funciones para ver, editar y eliminar categorias y subcategorias
 #------------------------------------------------------------------------------------------------------------------
 
 #Ruta para ver categorias
