@@ -1,0 +1,65 @@
+h3, #ct {
+    font-weight: bold;
+}
+
+.card.text-white.bg-dark.mb-3{
+    display: inline-flex;
+    height: 250px;
+    cursor: pointer;
+    
+}
+
+.card.text-white.bg-dark.mb-3:hover{
+    color: green !important;
+}
+
+#tit{
+    display: inline-flex;
+    margin-left: 4px;
+}
+
+.top{
+    margin-left: 2vh;
+}
+
+body{
+
+    background-image: url("https://i.pinimg.com/originals/92/94/1d/92941d986586249ee79a24065f68c910.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.table{
+    background-color:rgba(255,255,255,0.8);
+    border-radius: 10px;
+}
+
+
+.derecha{
+    margin-top: 3vh;
+    left: 3vh;
+    width:65vw;
+    max-height:77vh;
+}
+
+
+.all_categorias{
+    background-color:rgba(255,255,255,0.8);
+    margin-left:2vh;
+    font-size: 1.7vh;
+    width:30vw;
+    margin-top:3vh;
+    height: 77vh;
+    overflow: scroll;
+    border-radius: 10px;
+}
+
+.derizq{
+    display:inline-flex;
+}
+
+
+#magicButtons{
+    display: inline-block;
+    margin-top: 6px;
+}

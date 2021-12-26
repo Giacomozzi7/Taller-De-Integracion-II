@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/menu.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/textBox.css') }}>
+    
+    <link rel="stylesheet" href={{url_for('static', filename='/richtexteditor/rte_theme_default.css')}}>
+    <script type="text/javascript" src={{url_for('static', filename='/richtexteditor/rte.js')}}></script>  
+    <script type="text/javascript" src={{url_for('static', filename='/richtexteditor/plugins/all_plugins.js')}}></script>  
+
+    <title>Crear Documento</title>
+
+  </head>
+  <body>
+    <div class='container-xxl' id='cont'>
+    <div class="top">
+       {% include 'menuDesplegable.html' %}
+       <br>
+       <h3 id ='hola'>Vista: Ver Arquetipos y Crear Documento</h3>
+       <a type="button" class="btn btn-primary" href="verjson">Ver Json</a>
+       <a type="button" class="btn btn-warning" onclick="downloadPDFDialog()">
+        Exportar PDF y JPG
+       </a>
+       <a type="button" class="btn btn-success" onclick="exportaJSON()">
+        Exportar JSON
+       </a>
+       <br>
+    </div>
+    <div class='derizq'>
+       <!-- Cuando se realiza la consulta a la base de datos, se recorre el arreglo aData recibido para generar los bloques -->
+    <div class = "all_categorias">
+         <!-- For que recorre las colecciones (categorias) y crea los bloques-->
+       {%for i in range(0,aData|length)%}
+        <div class="card-border-dark">
+            <h5 class="card-header"><p id="tit" style="font-weight: bold;">Nombre: </p><p id="tit">{{aData[i][0][0]}}</p> | <p id="tit" style="font-weight: bold;">Fecha Creación:</p> <p id="tit">{{aData[i][0][1]}}</p></h5>
+            <div class="card-body">
+             <!-- For que recorre las subcategorias y crea los bloques -->
+            {%for k in range(0,aData[i][1]|length)%}
+            <div class="card border-primary">
+                <h5 class="card-header"><p id="tit" style="font-weight: bold;">Subcategoría:</p><p id="tit">{{aData[i][1][k]}}</p></h5>
+                <div class="card-body">
+                <!-- For que recorre los arquetipos y crea los bloques -->
+                
+                {%for z in range(0,aData[i][2][k]|length)%}
+                <div class="card text-white bg-dark mb-3" id = "{{aData[i][2][k][z][0]}}" style="max-width: 20vh;min-width: 20vh; max-height: 20vh;" onclick="insertarArquetipos(this.id)">
+                    <div class="card-header"><p style="font-weight: bold;" id ="tit_{{aData[i][2][k][z][0]}}">{{aData[i][2][k][z][0]}}</p></div>
+                    <div class="card-body-arq">
+                      <p class="card-text" id ="body_{{aData[i][2][k][z][0]}}">{{aData[i][2][k][z][1]}}</p>
+                    </div>
+                </div>
+                
+                {%endfor%}
+                </div>
+            </div>
+            <br>
+
+            {%endfor%}
+            </div>
+        </div>
+        <br>
+       {%endfor%}
+    </div>
+    <div id="div_editor1" class="derecha"> 
+    </div> 
+  </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='javascript/editor1.js') }}"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

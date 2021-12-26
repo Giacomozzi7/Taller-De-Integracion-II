@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/menu.css') }}>
+    <title>Modificar estructura</title>
+  </head>
+  <script src="{{ url_for('static', filename='javascript/confirmaBorrar.js') }}"></script>
+  <body>
+    <div class="container">
+      {% include 'menuDesplegable.html' %}
+      <br>
+      <h3>Vista: Editar categorías</h3>
+      <div class="row mt-5">
+        <div class="col-3 offset-9">
+          <a href="/vercategorias" class="btn btn-primary text-right">Volver</a>
+        </div>
+      </div>
+      <br>
+      <div class="card text-white bg-warning mb-3">
+        <div class="card-header">Modificación de registros</div>
+        <div class="card-body">
+          <p class="card-text">Formulario de edición de categorías</p>
+        </div>
+      </div>
+      <br>  
+      <form action="/actualizar/{{aData[0]}}" method="POST">
+        <div class="form-group">
+            <p><b>ID</b></p>
+            <input type="text" name="id_cat" value="{{aData[0]}}" class="form-control" disabled>
+          </div>
+        <div class="form-group">
+          <p><b>Fecha</b></p>
+          <input type="text" name="fecha" value="{{aData[1]}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <p><b>Categoría</b></p>
+          <input type="text" name="categoria" value="{{aData[2]}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <p><b>Descripción</b></p>
+            <input type="text" name="descripcion" value="{{aData[3]}}" class="form-control">
+          </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Actualizar
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

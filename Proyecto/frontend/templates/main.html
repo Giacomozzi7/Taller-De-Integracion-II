@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/menu.css') }}>
+    <title>Entorno de investigación aplicada dinámica digital</title>
+  </head>
+  <body>
+    <div class="container">
+      {% include 'menuDesplegable.html' %}
+      <br>
+       <div class="card border-dark mb-3" style="text-align: justify;">
+        <div class="card-header"><h3>Página Principal</h3></div>
+        <div class="card-body text-dark">
+          <h5 class="card-title" id="ct">Nombre Proyecto:</h5>
+          <p class="card-text">Entorno de Investigación Aplicada Dinamica Digital</p>
+          <h5 class="card-title" id="ct">Objetivos:</h5>
+          <ul>
+            <li>La creación de un complemento prototipo para ELGG que permita la confección de
+              planillas basadas en arquetipos.</li>
+            <li>La implementación de una interfaz que permita el arrastre de arquetipos al
+              documento principal para crear una plantilla base de investigación aplicada basadas
+              en las estructuras del proceso científico.</li>
+            <li>La implementación de una interfaz de edición de texto (que tiene como base la
+              plantilla creada anteriormente) basada en bloques de edición (similar a Gutenberg
+              en Wordpress).</li>
+          </ul>
+          <h5 class="card-title" id="ct">Descripción Resumida:</h5>
+          <p class="card-text">Es un entorno digital estructurado en base al proceso científico para crear, escribir, editar,
+            guardar y exportar artículos científicos. Este entorno digital integra en tiempo real los
+            componentes esenciales para un proceso científico cuantitativo, cualitativo o ambos juntos
+            conocido como metodología mixta (números y textos).</p>
+
+          <p class="card-text">Es una herramienta para la creación, edición y exportación de documentos que integra
+            plantillas dinámicas para la elaboración de artículos científicos. El investigador tiene la
+            posibilidad de interactuar con los diversos elementos constitutivos de un proceso de
+            investigación, los cuales se integran para dar el formato y las orientaciones básicas del
+            diseño metodológico seleccionado. De esta forma el proceso de elaboración del documento
+            científico es más amigable y accesible para personas menos experimentadas y optimiza el
+            proceso de aquellos usuarios expertos.</p>
+          
+          <h5 class="card-title" id="ct">Resultado Esperado:</h5>
+          <p class="card-text">El complemento permite la creación de plantillas base de investigación, las cuales pueden
+            ser editadas mediante el uso de bloques de edición.
+            El documento final creado a partir de la combinación de bloques puede ser exportado como
+            .ODT, .PDF y .JSON para ser utilizado en otros editores y/o plataformas.</p>
+          
+          <h5 class="card-title" id="ct">Tecnologías involucradas:</h5>
+          <ul>
+            <li>PHP7+</li>
+            <li>HTML5 - CSS3</li>
+            <li>Javascript</li>
+            <li>MongoDB o alternativa para BD’s NoSQL</li>
+          </ul>
+
+          <h5 class="card-title" id="ct">Criterios de aceptación:</h5>
+          <ul>
+            <li>El documento creado se puede descargar como formato abierto ODT.</li>
+            <li>El documento creado se puede exportar como PDF.</li>
+            <li>El documento creado (sin estilos, sólo contenido) se puede descargar como JSON.</li>
+            <li>(Opcional) Los documentos se pueden editar en conjunto (edición compartida similar
+              a Google Drive).</li>
+            <li>(Opcional) Integración con Zotero o alternativa para la inclusión de citas.</li>
+          </ul>
+        </div>
+      </div>
+    
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
